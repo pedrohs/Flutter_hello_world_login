@@ -28,10 +28,28 @@ class Page2 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text("Texto de exemplo"),
-              Text("Texto de exemplo"),
-              Text("Texto de exemplo"),
-              Text("Texto de exemplo")
+              TextFormField(
+                autofocus: true,
+                keyboardType: TextInputType.number,
+                style: TextStyle(fontSize:25),
+                decoration: InputDecoration(
+                  labelText: "CPF:"
+                ),
+                ),
+                Divider(),
+              TextFormField(
+                keyboardType: TextInputType.text,
+                obscureText: true,
+                style: TextStyle(fontSize:25),
+                decoration: InputDecoration(labelText: "Senha:"),
+              ),
+              Divider(),
+              ButtonTheme(
+                height: 60.0,
+                child: RaisedButton(
+                  child: Text("Entrar"), onPressed: () {},
+                ),
+              )
             ],
           )
         ),
