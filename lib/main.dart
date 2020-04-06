@@ -16,11 +16,36 @@ class MeuApp extends StatelessWidget {
   }
 }
 
+class HomeApp extends StatelessWidget {
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("Home Page"),),
+        body: Center(
+          child: RaisedButton(
+            child: Text("segunda pagina"), onPressed: () {
+              Navigator.pushNamed(context, '/page2');
+            },
+            ),
+          ),
+      )
+    );
+  }
+}
+
+
 class Page2 extends StatelessWidget {
   Widget build(BuildContext context){
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("Login"),),
+        appBar: AppBar(
+          title: Text("Login"),
+          leading: IconButton(
+                icon: const Icon(Icons.chevron_left), onPressed: () {
+                    Navigator.pop(context);
+                },
+              )
+          ),
         body: Padding(
           padding: EdgeInsets.all(10),
           child: Center(
@@ -47,29 +72,12 @@ class Page2 extends StatelessWidget {
               ButtonTheme(
                 height: 60.0,
                 child: RaisedButton(
-                  child: Text("Entrar"), onPressed: () {},
+                  child: Text("Entrar", style: TextStyle(color: Colors.white)), onPressed: () {},
                 ),
               )
             ],
           )
         ),
-          ),
-      )
-    );
-  }
-}
-
-class HomeApp extends StatelessWidget {
-  Widget build(BuildContext context){
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text("Home Page"),),
-        body: Center(
-          child: RaisedButton(
-            child: Text("segunda pagina"), onPressed: () {
-              Navigator.pushNamed(context, '/page2');
-            },
-            ),
           ),
       )
     );
