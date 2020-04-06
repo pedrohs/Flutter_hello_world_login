@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/pages/reset-password.dart';
 
 class Page2 extends StatelessWidget {
   Widget build(BuildContext context){
@@ -7,7 +8,8 @@ class Page2 extends StatelessWidget {
         appBar: AppBar(
           title: Text("Login"),
           leading: IconButton(
-                icon: const Icon(Icons.chevron_left), onPressed: () {
+                icon: const Icon(Icons.chevron_left), 
+                onPressed: () {
                     Navigator.pop(context);
                 },
               )
@@ -108,7 +110,13 @@ class Page3 extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: FlatButton(
                 child: Text('Recuperar Senha',), 
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ResetPasswordPage(),
+                    ));
+                },
               ),
             ),
             //Espacamento
